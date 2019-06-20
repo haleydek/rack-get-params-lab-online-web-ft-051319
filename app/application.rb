@@ -21,7 +21,11 @@ class Application
       end
     elsif req.path.match(/add/)
       item_to_add = req.params["item"]
-      @@items.find?()
+      if @@items.find?{ |item| item_to_add == item }
+        @@cart << item_to_add
+      else
+        resp.write "Item Not Available"
+      end
     else
       resp.write "Path Not Found"
     end

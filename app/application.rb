@@ -25,7 +25,7 @@ class Application
       end
     elsif req.path.match(/add/)
       item_to_add = req.params["item"]
-      if @@items.include?{ |item| item_to_add == item }
+      if @@items.include?(item_to_add)
         @@cart << item_to_add
       else
         resp.write "Item Not Available"

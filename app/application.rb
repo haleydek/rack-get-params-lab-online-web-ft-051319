@@ -20,7 +20,8 @@ class Application
         resp.write "#{item_in_cart}\n"
       end
     elsif req.path.match(/add/)
-      search_term = req.params["q"]
+      item_to_add = req.params["item"]
+      @@items.find?()
     else
       resp.write "Path Not Found"
     end
